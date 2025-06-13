@@ -45,6 +45,20 @@ class LinkedList {
             cur = cur.Next;
         }
     }
+     // 1 -> 2 -> 3 -> null
+    
+    public void Reverse() {
+        if(Head == null || Head.Next == null) return;
+        Node cur = Head;
+        Node prev = null;
+        while(cur != null){
+            Node next = cur.Next;
+            cur.Next = prev;
+            prev = cur;
+            cur = next;
+        }
+        Head = prev;
+    }
 }
 
 public class Program {
